@@ -2,11 +2,12 @@ package org.gskbyte.content.model;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
 import org.gskbyte.util.Logger;
+
+import com.google.common.collect.ImmutableMap;
 
 import android.content.Context;
 
@@ -44,7 +45,7 @@ public final int countExtraDatas()
 public final Map<String, ExtraData> getExtraDatas()
 {
     if(extraDatas != null)
-        return Collections.unmodifiableMap(extraDatas);
+        return ImmutableMap.copyOf(extraDatas);
     else
         return null;
 }
@@ -105,7 +106,5 @@ protected final ExtraData removeExtraData(String filename)
 
 protected void clearExtraDatas()
 { extraDatas = null; }
-
-
 
 }
