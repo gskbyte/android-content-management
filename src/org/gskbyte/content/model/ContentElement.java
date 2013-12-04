@@ -10,7 +10,8 @@ import lombok.Getter;
 public abstract class ContentElement<ElementClass extends ContentElement<ElementClass, ManagerClass>,
                                      ManagerClass extends ContentManager<ElementClass, ManagerClass>>
 extends AbstractContent< ContentElement<ElementClass, ManagerClass> >
-implements ListHashMap.Indexable<String>
+implements ListHashMap.Indexable<String>,
+    IContentElement
 {
 
 @Getter

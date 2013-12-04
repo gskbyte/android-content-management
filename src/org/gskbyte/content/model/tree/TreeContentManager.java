@@ -9,7 +9,7 @@ import org.gskbyte.content.model.ContentManager;
 
 import android.content.Context;
 
-public class TreeContentManager<TreeElementClass extends TreeContentElement<TreeElementClass, TreeManagerClass>,
+public abstract class TreeContentManager<TreeElementClass extends TreeContentElement<TreeElementClass, TreeManagerClass>,
                                 TreeManagerClass extends TreeContentManager<TreeElementClass, TreeManagerClass>>
 extends ContentManager<TreeElementClass, TreeManagerClass>
 {
@@ -51,5 +51,6 @@ public int getExtraDataLocation()
     // TODO REMOVE AND MAKE ABSTRACT
     return 0;
 }
+
 
 }

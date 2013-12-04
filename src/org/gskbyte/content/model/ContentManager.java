@@ -1,7 +1,6 @@
 package org.gskbyte.content.model;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import com.google.common.collect.ImmutableMap;
@@ -12,6 +11,7 @@ import android.content.Context;
 public abstract class ContentManager<ElementClass extends ContentElement<ElementClass, ManagerClass>,
                                      ManagerClass extends ContentManager<ElementClass, ManagerClass>>
 extends AbstractContent< ContentManager<ElementClass, ManagerClass> >
+implements IContentManager<ElementClass>
 {
 
 protected final Context context;
@@ -30,7 +30,7 @@ public final Context getContext()
 
 public final Map<String, ExtraData> getExtraDatasRecursive()
 {
-    Map<String, ExtraData> allExtraDatas = new HashMap<String, ExtraData>();
+    final Map<String, ExtraData> allExtraDatas = new HashMap<String, ExtraData>();
     if( hasExtraDatas() )
         allExtraDatas.putAll( getExtraDatas() );
     
@@ -46,8 +46,5 @@ public final Map<String, ExtraData> getExtraDatasRecursive()
 public abstract boolean loadData();
 
 public abstract boolean containsElementWithKey(String elementKey);
-public abstract int countElements();
-public abstract List<ElementClass> getElements();
-public abstract Map<String, ElementClass> getElementsMap();
 
 }
