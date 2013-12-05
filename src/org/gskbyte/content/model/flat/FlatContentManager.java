@@ -15,7 +15,13 @@ public abstract class FlatContentManager<ElementClass extends FlatContentElement
 extends ContentManager< ElementClass, ManagerClass >
 {
  
-private final ListHashMap<String, ElementClass> elements = new ListHashMap<String, ElementClass>();
+private final ListHashMap<String, ElementClass> elements = new ListHashMap<String, ElementClass>() {
+    private static final long serialVersionUID = -301743790574462247L;
+
+    @Override
+    public String keyForValue(ElementClass element)
+    { return element.getKey(); }
+};
 
 public FlatContentManager(Context context, String uniqueId)
 {
