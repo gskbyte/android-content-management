@@ -1,7 +1,5 @@
 package org.gskbyte.content.model.flat;
 
-import org.gskbyte.collection.ListHashMap;
-
 import org.gskbyte.content.model.ContentElement;
 
 public class FlatContentElement<ElementClass extends FlatContentElement<ElementClass, ManagerClass>,

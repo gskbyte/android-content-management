@@ -51,13 +51,7 @@ public final ElementClass getElementWithKey(String elementId)
  * */
 protected final ElementClass appendElement(ElementClass element)
 {
-    ElementClass old = elements.get(element.getKey());
-    
-    elements.put(element.getKey(), element);
-    if( old != null) {
-        elements.remove(old);
-    }
-    return old;
+    return elements.put(element.getKey(), element);
 }
 
 public final ElementClass removeElement(String elementId)
